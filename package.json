@@ -13,7 +13,11 @@
     "./preact": "./dist/src/adapters/preact/index.js",
     "./react": "./dist/src/adapters/react/index.js",
     "./react-ui": "./dist/src/ui/react/index.js",
-    "./preact-ui": "./dist/src/ui/preact/index.js"
+    "./preact-ui": "./dist/src/ui/preact/index.js",
+    "./shadcn": "./dist/src/shadcn/index.js"
+  },
+  "bin": {
+    "vite-auth-m8": "./dist/bin/vite-auth-m8.js"
   },
   "types": "./dist/src/index.d.ts",
   "files": [
