@@ -8,7 +8,12 @@
     ".": "./dist/src/index.js",
     "./plugin": "./dist/src/plugin/faAuthM8Extension.js",
     "./client": "./dist/src/runtime/index.js",
-    "./schemas": "./dist/src/runtime/schemas.js"
+    "./schemas": "./dist/src/runtime/schemas.js",
+    "./vanilla": "./dist/src/adapters/vanilla/index.js",
+    "./preact": "./dist/src/adapters/preact/index.js",
+    "./react": "./dist/src/adapters/react/index.js",
+    "./react-ui": "./dist/src/ui/react/index.js",
+    "./preact-ui": "./dist/src/ui/preact/index.js"
   },
   "types": "./dist/src/index.d.ts",
   "files": [
