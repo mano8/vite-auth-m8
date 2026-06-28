@@ -1,0 +1,36 @@
+{
+  "name": "@fa-m8/vite-auth-m8",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Vite plugin and runtime helpers for fa-auth-m8 Chrome extensions.",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": "./dist/src/index.js",
+    "./client": "./dist/src/runtime/index.js",
+    "./schemas": "./dist/src/runtime/schemas.js"
+  },
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --coverage",
+    "test:unit": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^4.1.9",
+    "typescript": "^5.8.0",
+    "vitest": "^4.1.9"
+  },
+  "overrides": {
+    "esbuild": "^0.28.1"
+  }
+}
