@@ -4,17 +4,52 @@
   "type": "module",
   "description": "Vite plugin and runtime helpers for fa-auth-m8 Chrome extensions.",
   "license": "Apache-2.0",
+  "workspaces": [
+    "examples/vanilla-extension",
+    "examples/preact-extension",
+    "examples/react-extension"
+  ],
   "exports": {
-    ".": "./dist/src/index.js",
-    "./plugin": "./dist/src/plugin/faAuthM8Extension.js",
-    "./client": "./dist/src/runtime/index.js",
-    "./schemas": "./dist/src/runtime/schemas.js",
-    "./vanilla": "./dist/src/adapters/vanilla/index.js",
-    "./preact": "./dist/src/adapters/preact/index.js",
-    "./react": "./dist/src/adapters/react/index.js",
-    "./react-ui": "./dist/src/ui/react/index.js",
-    "./preact-ui": "./dist/src/ui/preact/index.js",
-    "./shadcn": "./dist/src/shadcn/index.js"
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    },
+    "./plugin": {
+      "types": "./dist/src/plugin/faAuthM8Extension.d.ts",
+      "import": "./dist/src/plugin/faAuthM8Extension.js"
+    },
+    "./client": {
+      "types": "./dist/src/runtime/index.d.ts",
+      "import": "./dist/src/runtime/index.js"
+    },
+    "./schemas": {
+      "types": "./dist/src/runtime/schemas.d.ts",
+      "import": "./dist/src/runtime/schemas.js"
+    },
+    "./vanilla": {
+      "types": "./dist/src/adapters/vanilla/index.d.ts",
+      "import": "./dist/src/adapters/vanilla/index.js"
+    },
+    "./preact": {
+      "types": "./dist/src/adapters/preact/index.d.ts",
+      "import": "./dist/src/adapters/preact/index.js"
+    },
+    "./react": {
+      "types": "./dist/src/adapters/react/index.d.ts",
+      "import": "./dist/src/adapters/react/index.js"
+    },
+    "./react-ui": {
+      "types": "./dist/src/ui/react/index.d.ts",
+      "import": "./dist/src/ui/react/index.js"
+    },
+    "./preact-ui": {
+      "types": "./dist/src/ui/preact/index.d.ts",
+      "import": "./dist/src/ui/preact/index.js"
+    },
+    "./shadcn": {
+      "types": "./dist/src/shadcn/index.d.ts",
+      "import": "./dist/src/shadcn/index.js"
+    }
   },
   "bin": {
     "vite-auth-m8": "./dist/bin/vite-auth-m8.js"
@@ -22,12 +57,21 @@
   "types": "./dist/src/index.d.ts",
   "files": [
     "dist",
+    "examples",
     "README.md",
     "LICENSE"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "build:example:vanilla": "vite build --config examples/vanilla-extension/vite.config.ts",
+    "build:example:preact": "vite build --config examples/preact-extension/vite.config.ts",
+    "build:example:react": "vite build --config examples/react-extension/vite.config.ts",
+    "build:examples": "npm run build:example:vanilla && npm run build:example:preact && npm run build:example:react",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck:example:vanilla": "tsc -p examples/vanilla-extension/tsconfig.json --noEmit",
+    "typecheck:example:preact": "tsc -p examples/preact-extension/tsconfig.json --noEmit",
+    "typecheck:example:react": "tsc -p examples/react-extension/tsconfig.json --noEmit",
+    "typecheck:examples": "npm run typecheck:example:vanilla && npm run typecheck:example:preact && npm run typecheck:example:react",
     "test": "vitest run --coverage",
     "test:unit": "vitest run"
   },
@@ -38,8 +82,14 @@
     "vite": "^6.0.0 || ^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
+    "@types/chrome": "^0.2.0",
     "@types/node": "^22.0.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@vitest/coverage-v8": "^4.1.9",
+    "preact": "^10.29.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "typescript": "^5.8.0",
     "vite": "^8.1.0",
     "vitest": "^4.1.9"

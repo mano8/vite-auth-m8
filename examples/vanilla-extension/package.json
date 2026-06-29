@@ -1,0 +1,15 @@
+{
+  "name": "@fa-m8/vite-auth-m8-example-vanilla",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@fa-m8/vite-auth-m8": "file:../.."
+  },
+  "devDependencies": {
+    "vite": "^8.1.0",
+    "typescript": "^5.8.0"
+  }
+}

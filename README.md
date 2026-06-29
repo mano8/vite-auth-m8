@@ -8,6 +8,24 @@ Package name: `@fa-m8/vite-auth-m8`.
 This repository owns the new extension plugin work. The old
 `fa-auth-m8/examples/addon` project is migration input only.
 
+## Examples
+
+Build the package, then build the Chrome MV3 examples:
+
+```bash
+npm run build
+npm run build:examples
+```
+
+The examples live in `examples/`:
+
+- `vanilla-extension`
+- `preact-extension`
+- `react-extension`
+
+They document migration from the old addon template and the required backend
+settings for extension origins and OAuth redirects.
+
 ## Tailwind and shadcn
 
 Patch Tailwind content paths for generated extension UI:
